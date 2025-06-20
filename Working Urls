@@ -1,0 +1,50 @@
+BASE URL
+
+http://localhost:8080/api
+
+----------------------------------------------------------
+
+USER MODULE
+
+POST	http://localhost:8080/api/users/register	Register a new user
+POST	http://localhost:8080/api/users/login?email=abc@gmail.com&password=abc123	User login
+GET	http://localhost:8080/api/users	View all users
+GET	http://localhost:8080/api/users/{userId}	Get user by ID
+DELETE	http://localhost:8080/api/users/{userId}	Delete user
+
+SELLER MODULE
+
+POST	http://localhost:8080/api/sellers/register	Register a seller
+POST	http://localhost:8080/api/sellers/login?email=trendy@wear.com&password=trendy123	Seller login
+GET	http://localhost:8080/api/sellers	View all sellers
+GET	http://localhost:8080/api/sellers/{sellerId}	Get seller by ID
+DELETE	http://localhost:8080/api/sellers/{sellerId}	Delete seller
+
+SELLER PRODUCT MANAGEMENT
+
+POST	http://localhost:8080/api/seller/products/{sellerId}	Add a new product
+PUT	http://localhost:8080/api/seller/products	Update product
+DELETE	http://localhost:8080/api/seller/products/{productId}	Delete product
+GET	http://localhost:8080/api/seller/products/{sellerId}	View all seller's products
+
+SELLER ORDER PROCESSING
+
+GET	http://localhost:8080/api/seller/orders/{sellerId}	View all orders for seller
+PUT	http://localhost:8080/api/seller/orders/{orderId}/status?status=Shipped	Update order status
+GET	http://localhost:8080/api/seller/orders/{sellerId}/sales	Get total sales (revenue)
+
+PRODUCT BROWSING (User)
+
+GET	http://localhost:8080/api/products	View all products
+GET	http://localhost:8080/api/products/{productId}	View product by ID
+GET	http://localhost:8080/api/products/category/{category}	Filter products by category
+GET	http://localhost:8080/api/products/search?keyword=laptop	Search products by name
+DELETE	http://localhost:8080/api/products/{productId}	Admin delete product
+
+ADMIN MODULE
+
+POST	http://localhost:8080/api/admin/login?email=admin@quitq.com&password=admin123	Admin login
+GET	http://localhost:8080/api/admin/users	View all users
+DELETE	http://localhost:8080/api/admin/users/{userId}	Delete user
+GET	http://localhost:8080/api/admin/products	View all products
+DELETE	http://localhost:8080/api/admin/products/{productId}	Delete product
